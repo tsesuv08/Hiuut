@@ -1,6 +1,6 @@
 /* UnSynk @ language Token header */
-/* Build: 20260530XXXX */
-/* Created by UnSynk, tsesuv notsel */
+/* Version: M1N0P0P */
+/* Created by UnSynk, TSesuv Xanuc Notsel */
 
 #ifndef TOKEN_H
 #define TOKEN_H
@@ -27,23 +27,12 @@ typedef struct
 	byte *dat;
 } Token;
 
-typedef struct tkList
-{	Token t;
-
-	struct tkList *head;
-	struct tkList *next;
-} tkList;
-
 ////////////////////////////////////////////////////////
 
 Token tknnew(void);
 bit tknset(Token *t, tkType type, byte *d);
 
-tkList *tklnew(tkList *head);
-bit tklset(tkList *list, Token t);
-
 bit tknfree(Token *t);
-bit tklfree(tkList *list);
 
 byte *type2str(tkType type);
 
@@ -72,52 +61,11 @@ bit tknset(Token *t, tkType type, byte *d)
 	return x;
 }
 
-tkList *tklnew(tkList *head)
-{	tkList *list = (tkList *)malloc(sizeof(tkList));
-
-	list->head = head ? head : list;
-	list->next = NULL;
-
-	return list;
-}
-
-bit tklset(tkList *list, Token t)
-{	bit x;
-	tkList *ntkn = tklnew(list->head);
-
-	ntkn->t = t;
-	list->next = ntkn;
-
-	set(&x, 1);
-
-	return x;
-}
-
 bit tknfree(Token *t)
 {	bit x;
 
 	t->type = TK_VOID;
 	free(t->dat);
-
-	set(&x, 1);
-
-	return x;
-}
-
-bit tklfree(tkList *list)
-{	bit x;
-
-	list = list->head;
-
-	while(list)
-	{	tkList *tmp = list->next;
-		list->head = list->next = NULL;
-
-		tknfree(&list->t);
-		free(list);
-
-		list = tmp;
-	}
 
 	set(&x, 1);
 

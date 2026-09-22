@@ -1,30 +1,21 @@
-/* UnSynk Chain Interpreter */
-/* Version: 1.0.0 Pre-Alpha */
-/* Created by UnSynk, tsesuv notsel */
+/* Unsynk Chain Interpreter */
+/* Version: M1N0P0P */
+/* Created by UnSynk, TSesuv Xanuc Notsel */
 
-int main(int ac, char **av)
-{
-	;
+#include <stdio.h>
+
+typedef unsigned char chr;
+
+chr f = 0;
+
+int main(int ac, chr **av)
+{	if(ac < 2)
+		f |= 0x1;
+
+	for(int i = 0; i < ac; i++)
+	{	if(*av[i] == '/')
+			printf("option\n");
+	}
 
 	return 0;
 }
-
-/*
-(RET:(
-	DEF:MAIN:(
-			OUT:'Hello, world!%j"'
-		)
-))
-v
-(RET:(
-	DEF:MAIN:(
-			t
-		)
-))
-v
-(RET:(
-	t
-))
-v
-(t)
-*/
