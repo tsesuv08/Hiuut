@@ -21,13 +21,13 @@ $
 
 0オペランドオペコード
 ======
-! Run virtual-code
+! ??????
 ^ Landmark
 
 1オペランドオペコード
 ======
 #A 0-clear Regs value
-$A Get Regs value
+$A Get Regs value (Int, stdin)
 &A Printout char (ASCII, stdout)
 'A Get Regs value (ASCII, stdin)
 /A Incriment Regs value
@@ -38,9 +38,10 @@ $A Get Regs value
 2オペランドオペコード
 ======
 ?AV Compare A and value
-<fV Jmp to landmark before value if F and f == true
->fV Jmp to landmark after value if F and f == true
+<fV Jmp to landmark before value if flag f is seted
+>fV Jmp to landmark after value if flag f is seted
 +AV Add value to Regs
++AB Add Regs to Regs
 -AV Sub value to Regs
 -AB Sub Regs to Regs
 -VA Sub Regs to value
