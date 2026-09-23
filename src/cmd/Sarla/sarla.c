@@ -227,7 +227,7 @@ int main(int ac, char **av)
 					if(ch == '^')
 						land++;
 				}
-			}
+			} land = 0;
 		} else if(code == '>')
 		{	chr vf = mem[pc++];
 			uint v = vcvt(mem);
@@ -238,7 +238,7 @@ int main(int ac, char **av)
 					if(ch == '^')
 						land++;
 				}
-			}
+			} land = 0;
 		} else if(code == '+')
 		{	chr id = mem[pc++];
 			if(mem[pc] < 0x3A)
