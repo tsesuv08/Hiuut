@@ -1,0 +1,81 @@
+1文字オペコードプログラミング言語でも作ろうと思う
+- 自作軽量AIを作ることもできるかもね？AIが生成するコード用の言語として
+
+使う記号
+======
++
+-
+*
+/
+=
+?
+<
+>
+\
+_
+^
+!
+#
+$
+%
+
+0オペランドオペコード
+======
+! Run virtual-code
+^ Landmark
+
+1オペランドオペコード
+======
+#A 0-clear Regs value
+$A Get Regs value
+&A Printout char (ASCII, stdout)
+'A Get Regs value (ASCII, stdin)
+/A Incriment Regs value
+\A Decrement Regs value
+*A Push Regs to stack
+%A Pop Regs from stack
+
+2オペランドオペコード
+======
+?AV Compare A and value
+<fV Jmp to landmark before value if F and f == true
+>fV Jmp to landmark after value if F and f == true
++AV Add value to Regs
+-AV Sub value to Regs
+-AB Sub Regs to Regs
+-VA Sub Regs to value
+
+その他
+======
+_Comment=
+
+値
+======
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+レジスタ
+======
+(PC)
+(SP)
+(F)
+A
+B
+C
+D
+E
+H
+L
+N
+K
+P
+Q
+R
