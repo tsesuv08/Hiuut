@@ -1,6 +1,6 @@
 /* UnSynk Sarla Interpreter */
 /* Created by UnSynk, TSesuv Xanuc Notsel */
-/* Version: M1N0P0P */
+/* Version: M1N0P1P */
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -165,7 +165,7 @@ int main(int ac, char **av)
 			continue;
 
 		else if(code == '!')
-			;
+			printf("[] A%d, B%d, C%d, D%d, E%d, H%d, L%d, N%d, K%d, P%d, Q%d, R%d, PC%d, SP%d, F%d, SK[SP-1]%d\n", r[0], r[1], r[2], r[3], r[4], r[5], r[6], r[7], r[8], r[9], r[10], r[11], pc, sp, f, sk[sp-1]);
 		else if(code == '^')
 			continue;
 
@@ -208,15 +208,23 @@ int main(int ac, char **av)
 		} else if(code == '?')
 		{	chr id = mem[pc++];
 			uint v = vcvt(mem);
-			uint res = r[regid(id)] - v;
-			if(res == 0)
+			if(r[regid(id)] == v)
 				f |= 1;
 
-			else if(res < 0)
+			else
+				f &= ~1;
+
+			if(r[regid(id)] < v)
 				f |= 4;
 
-			else if(!(res < 0))
+			else
+				f &= ~4;
+
+			if(!(r[regid(id)] < v))
 				f |= 8;
+
+			else
+				f &= ~8;
 		} else if(code == '<')
 		{	chr vf = mem[pc++];
 			uint v = vcvt(mem);

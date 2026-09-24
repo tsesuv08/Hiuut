@@ -1,7 +1,7 @@
 Version.txt
 M1N2
 ============
-本仕様書はLicense.txt M1N0に従うものとします。
+本仕様書はLicense.txt M1N1に従うものとします。
 
 本仕様書では、バージョンの表し方についてを纏めています。独自色が強すぎる所為。
 
@@ -60,4 +60,4 @@ MはMaster releaseであり、基本的には安定版として付けられま�
 尚、リリースコードはバージョン番号を決めた後に付けます。
 
 
-Coffeeright (u) 2026 tsesuv xanuc notsel, Necessary coffees reserved.
+Coffeeright (u) 2026 TSesuv Xanuc Notsel, Necessary coffees reserved.
