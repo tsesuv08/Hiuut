@@ -17,9 +17,12 @@ mdl strs
 				; 但しモジュールを挟んでってことは無いのでそこは安心 (他のモジュールのdom変数はアクセス出来無い) 。
 
 		to(strs:scmp(s, `cmd_end_`)) ; while
-		[	s <- cslio:in()
+		[	s <- cslio:in() ; 代入演算子って悩みの種だよねぇ ... <-記号はとてつもなく「代入です」の見た目なのだけれど。
+							; でも比較演算子+負の数になると状況が悪化すると言う。どうしたものかねぇ。値には常に値であることを表す記号 ...
+							; 例えば#で10進数、$で16進数を強制すれば対処できるんだけどねぇ。
+							; まぁそれでいっかぁ。
 			putchrl(s) ; 同じモジュール内の別の関数なら名前空間指定は要らない
-		]
+		] cslio:outln(`end of input`)
 
 		ret(0)
 	]
@@ -33,8 +36,8 @@ mdl strs
 
 		size|int <- strs:slen(s)
 
-		for(i|int <- 0, i < size, i++)
-		[	cslio:put(strs:getc(s, i)) ; s_iとしてはいけない、(chr*)sや(chr)s_(10)とstr型は別物。配列アクセスs_iはエラー。
+		for(i|int <- #0, i < size, i++)
+		[	cslio:put(strs:getc(s, i)) ; s_iとしてはいけない、(chr*)sや(chr)s_(#10)とstr型は別物。配列アクセスs_iはエラー。
 			cslio:out(`\n`)
 		]
 
