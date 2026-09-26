@@ -24,7 +24,7 @@ mdl strs
 			putchrl(s) ; 同じモジュール内の別の関数なら名前空間指定は要らない
 		] cslio:outln(`end of input`)
 
-		ret(0)
+		ret(#0)
 	]
 
 	putchrl(s|str)|bool ; 関数はpublicを付けない限りprivate。
