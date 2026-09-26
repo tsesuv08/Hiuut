@@ -4,31 +4,35 @@
 mdl cslio
 mdl strs
 
-[	(int)main<> public
-	[	(str)s	; 変数は基本同一スコープでのみ参照可能
-				; 下位スコープから参照したいならdomをつける (Domination)
+[	main()|int public ; 型名後置なのはそうでもしないと曖昧さが残るから。パイプで繋いでるのは丁度いい見た目をしてるから
+	[	s|str	; 変数は基本同一スコープ以下でのみ参照可能 (上位スコープにある変数と同じ名前の変数名で変数アクセス先を一時上書き可能)
+				; 上位スコープから下位スコープの変数を参照したいならその変数にdomを付ける (Domination) 。s|str domって感じ。
+				; dom変数は実質的なグローバル変数として機能する。完全な代替では無い。
+				; その為変数名一時上書きが出来無い。
+				; 但しモジュールを挟んでってことは無いのでそこは安心 (他のモジュールのdom変数はアクセス出来無い) 。
 
-		to<scmp<s, `cmd_end_`>> ; while
-		[	csl:in<> -> s ; <-向きじゃないのはそっちだと関数の引数の最初の要素に単項演算子-が付いている場合との区別がめんどい為。
-						  ; ->向きならば先ず関数呼び出しがあったかどうかで判別出来るし、抑単項演算子-と関数呼び出し末尾>が普通のコードで連続しない・している場合エラーだし。
-			putchrl<s>
+		to(strs:scmp(s, `cmd_end_`)) ; while
+		[	s <- cslio:in()
+			putchrl(s) ; 同じモジュール内の別の関数なら名前空間指定は要らない
 		]
 
-		ret<0>
+		ret(0)
 	]
 
-	(bool)putchrl<(str)s>
-	[	if<!strs:valid<s>>
-			trp<$400>	; 割り込み―。215の奴。
-						; SarlaはYsesにコンパイルされて、そこからYsesの、アセンブラ？で215にアセンブルされて、そこから215のアセンブラで215バイナリにアセンブルされて、そこからようやくネイティブにトランスされるからねぇ
+	putchrl(s|str)|bool ; 関数はpublicを付けない限りprivate。
+	[	if(!strs:valid(s))
+			trp($400)	; 割り込み―。215の奴。
+						; Sarlaはインタプリタ実行が出来て、
+						; コンパイラを使えば215のアセンブラで215バイナリにアセンブルされて (215もVMを用意するつもりだから此の儘でも実行出来る) 、
+						; そこからネイティブにトランスされるからねぇ
 
-		(int)size <- strs:slen<s>
+		size|int <- strs:slen(s)
 
-		for<0 -> (int)i, i ? size, i++> ; i ? size は i < size.
-		[	csl:put<strs:getc<s, i>> ; s_iとしてはいけない、(chr*)sや(chr)s_(10)とstr型は別物。配列アクセスs_iはエラー。
-			csl:out<`\n`>
+		for(i|int <- 0, i < size, i++)
+		[	cslio:put(strs:getc(s, i)) ; s_iとしてはいけない、(chr*)sや(chr)s_(10)とstr型は別物。配列アクセスs_iはエラー。
+			cslio:out(`\n`)
 		]
 
-		ret<true>
+		ret(true)
 	]
-] :=: (mdl)intro
+] :=: intro|mdl
