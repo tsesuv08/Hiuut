@@ -1,6 +1,6 @@
-/* UnSynk Sarla Interpreter */
+/* UnSynk Yses Interpreter */
 /* Created by UnSynk, TSesuv Xanuc Notsel */
-/* Version: M1N1P0P */
+/* Version: M1N1P1P */
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -186,7 +186,13 @@ int main(int ac, char **av)
 
 			r[regid(id)] = 0;
 			while((ch = getchar()) != '\n')
-			{	r[regid(id)] *= 10;
+			{	if(ch < 0x30 || 0x39 < ch)
+				{	printf("\n\n[] ERR: It's not a integer\n\n");
+
+					break;
+				}
+
+				r[regid(id)] *= 10;
 				r[regid(id)] += ch - '0';
 			}
 		} else if(code == '&')

@@ -5,6 +5,25 @@
 #include <stdio.h>
 
 typedef unsigned char chr;
+typedef unsigned int uint;
+
+typedef enum
+{	tk_null,
+	tk_void,
+	tk_int,
+	tk_flt,
+	tk_str,
+	tk_eof;
+} ttp;
+
+typedef struct
+{	typedef union
+	{	;
+	};
+
+	chr *s;
+	uint l;
+} tkn;
 
 chr f = 0;
 

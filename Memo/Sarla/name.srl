@@ -1,4 +1,4 @@
-%inc `cslio.chh`
+mdl cslio
 
 [	(int)main<> public
 	[	`str` -> (str)tpe
@@ -12,7 +12,7 @@
 		&nsp:&func<&var>
 
 		func + `ln` -> func
-		`Hallo` -> &var
+		`Vikka` -> &var
 
 		&nsp:&func<&var>
 
@@ -36,8 +36,8 @@
 		; [	`sub` -> func
 		; ]
 		; ...
-		; &func<num1, num2>
+		; nsp:&func<num1, num2>
 
 		ret<0>
 	]
-] # (mdl)name
+] :=: (mdl)name

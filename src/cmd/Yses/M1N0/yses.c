@@ -1,4 +1,4 @@
-/* UnSynk Sarla Interpreter */
+/* UnSynk Yses Interpreter */
 /* Created by UnSynk, TSesuv Xanuc Notsel */
 /* Version: M1N0P1P */
 #include <stdio.h>

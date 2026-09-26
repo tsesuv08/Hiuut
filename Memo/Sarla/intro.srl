@@ -1,11 +1,12 @@
-; Chain introduction
-; intro.chs
+; Sarla introduction
+; intro.srl
 
-%inc `cslio.chh`
-%inc `strs.chh`
+mdl cslio
+mdl strs
 
 [	(int)main<> public
-	[	(str)s
+	[	(str)s	; 変数は基本同一スコープでのみ参照可能
+				; 下位スコープから参照したいならdomをつける (Domination)
 
 		to<scmp<s, `cmd_end_`>> ; while
 		[	csl:in<> -> s ; <-向きじゃないのはそっちだと関数の引数の最初の要素に単項演算子-が付いている場合との区別がめんどい為。
@@ -18,7 +19,8 @@
 
 	(bool)putchrl<(str)s>
 	[	if<!strs:valid<s>>
-			trp<$400> ; 割り込み―。215の奴。
+			trp<$400>	; 割り込み―。215の奴。
+						; SarlaはYsesにコンパイルされて、そこからYsesの、アセンブラ？で215にアセンブルされて、そこから215のアセンブラで215バイナリにアセンブルされて、そこからようやくネイティブにトランスされるからねぇ
 
 		(int)size <- strs:slen<s>
 
@@ -29,4 +31,4 @@
 
 		ret<true>
 	]
-] # (mdl)intro
+] :=: (mdl)intro
