@@ -1,4 +1,4 @@
-/* Unsynk Chain Interpreter */
+/* Unsynk Chain Compiler */
 /* Version: M1N0P0P */
 /* Created by UnSynk, TSesuv Xanuc Notsel */
 
