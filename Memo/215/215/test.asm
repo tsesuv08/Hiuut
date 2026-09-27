@@ -33,90 +33,115 @@
 ; HX         05
 ; LX         06
 
-; SP         10
-; KX         11
+; SP         07
+; KX         08
 
-; HX:BX      20
-; HX:LX      21
-; KX:HX:BX   22
-; KX:HX:LX   23
+; HX:BX      09
+; HX:LX      0A
+; KX:HX:BX   0B
+; KX:HX:LX   0C
 
-; |BS|       30
-; |HS|       31
-; |LS|       32
+; |BS|       0D
+; |HS|       0E
+; |LS|       0F
 
-; <BS>       33
-; <HS>       34
-; <LS>       35
+; <BS>       10
+; <HS>       11
+; <LS>       12
 
-; (BS)       36
-; (HS)       37
-; (LS)       38
+; (BS)       13
+; (HS)       14
+; (LS)       15
 
-; [BS]       39
-; [HS]       3A
-; [LS]       3B
+; [BS]       16
+; [HS]       17
+; [LS]       18
 
-; |BX|       40
-; |HX|       41
-; |LX|       42
+; |BX|       19
+; |HX|       1A
+; |LX|       1B
 
-; <BX>       43
-; <HX>       44
-; <LX>       45
+; <BX>       1C
+; <HX>       1D
+; <LX>       1E
 
-; (BX)       46
-; (HX)       47
-; (LX)       48
+; (BX)       1F
+; (HX)       20
+; (LX)       21
 
-; [BX]       49
-; [HX]       4A
-; [LX]       4B
+; [BX]       22
+; [HX]       23
+; [LX]       24
 
-; |HX:BX|    50
-; |HX:LX|    51
+; |HX:BX|    25
+; |HX:LX|    26
 
-; <HX:BX>    52
-; <HX:LX>    53
+; <HX:BX>    27
+; <HX:LX>    28
 
-; (HX:BX)    54
-; (HX:LX)    55
+; (HX:BX)    29
+; (HX:LX)    2A
 
-; [HX:BX]    56
-; [HX:LX]    57
+; [HX:BX]    2B
+; [HX:LX]    2C
 
-; |KX:HX:BX| 60
-; |KX:HX:LX| 61
+; |KX:HX:BX| 2D
+; |KX:HX:LX| 2E
 
-; <KX:HX:BX> 62
-; <KX:HX:LX> 63
+; <KX:HX:BX> 2F
+; <KX:HX:LX> 30
 
-; (KX:HX:BX) 64
-; (KX:HX:LX) 65
+; (KX:HX:BX) 31
+; (KX:HX:LX) 32
 
-; [KX:HX:BX] 66
-; [KX:HX:LX] 67
+; [KX:HX:BX] 33
+; [KX:HX:LX] 34
 
-; IMM        70
-; |IMM|      71
-; <IMM>      72
-; (IMM)      73
-; [IMM]      74
+; 8Bit IMM
+; IMM        80
+; |IMM|      81
+; <IMM>      82
+; (IMM)      83
+; [IMM]      84
+
+; 16Bit IMM
+; IMM        85
+; |IMM|      86
+; <IMM>      87
+; (IMM)      88
+; [IMM]      89
+
+; 32Bit IMM
+; IMM        8A
+; |IMM|      8B
+; <IMM>      8C
+; (IMM)      8D
+; [IMM]      8E
+
+; 64Bit IMM
+; IMM        8F
+; |IMM|      90
+; <IMM>      91
+; (IMM)      92
+; [IMM]      93
 
 ; レジスタ00-06は16Bit
 ; レジスタ10   は32Bit
 ; レジスタ11   は64Bit
-; レジスタ00-06は末尾をSとする (LXはLSとする) 事で8Bitとして扱える。
+; レジスタ00-06は末尾をSとする事で8Bitとして扱える。
 ; 8Bit時の動作は、レジスタの下位8Bitを使用し、上位8Bitは常に保護される。
+; レジスタが8Bitか16Bitかの判断は命令で判断する
 
 ;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;;;;  8Bit Inst ;;;;;;
 
+; 00系
 NOP ; 00
 
 
 
+; 01系
 INC AS ; 01 00
 INC BS ; 01 01
 INC CS ; 01 02
@@ -124,90 +149,102 @@ INC DS ; 01 03
 INC ES ; 01 04
 INC HS ; 01 05
 INC LS ; 01 06
-INC |BS| ; 01 30
-INC |HS| ; 01 31
-INC |LS| ; 01 32
-INC |HX:BX| ; 01 50
-INC |HX:LX| ; 01 51
-INC |KX:HX:BX| ; 01 60
-INC |KX:HX:LX| ; 01 61
+INC |BX| ; 01 19
+INC |HX| ; 01 1A
+INC |LX| ; 01 1B
+INC |HX:BX| ; 01 25
+INC |HX:LX| ; 01 26
+INC |KX:HX:BX| ; 01 2D
+INC |KX:HX:LX| ; 01 2E
 
 
 
-ADD AS, $CD ; 02 00 00 CD
+; 02系
+
+; ; 00系
 ADD AS, BS ; 02 00 01
 ADD AS, CS ; 02 00 02
 ADD AS, DS ; 02 00 03
 ADD AS, ES ; 02 00 04
 ADD AS, HS ; 02 00 05
 ADD AS, LS ; 02 00 06
-ADD AS, |HS| ; 02 00 31
-ADD AS, |LS| ; 02 00 32
-ADD AS, |HX:BX| ; 02 00 50
-ADD AS, |HX:LX| ; 02 00 51
-ADD AS, |KX:HX:BX| ; 02 00 60
-ADD AS, |KX:HX:LX| ; 02 00 61
+ADD AS, |HX| ; 02 00 1A
+ADD AS, |LX| ; 02 00 1B
+ADD AS, |HX:BX| ; 02 00 25
+ADD AS, |HX:LX| ; 02 00 26
+ADD AS, |KX:HX:BX| ; 02 00 2D
+ADD AS, |KX:HX:LX| ; 02 00 2E
+ADD AS, $CD ; 02 00 80 CD
 
+; ; 01系
 ADD BS, AS ; 02 01 00
-ADD BS, $CD ; 02 01 01 CD
 ADD BS, CS ; 02 01 02
 ADD BS, DS ; 02 01 03
 ADD BS, ES ; 02 01 04
 ADD BS, HS ; 02 01 05
 ADD BS, LS ; 02 01 06
+ADD BS, $CD ; 02 01 80 CD
 
+; ; 02系
 ADD CS, AS ; 02 02 00
 ADD CS, BS ; 02 02 01
-ADD CS, $CD ; 02 02 02 CD
 ADD CS, DS ; 02 02 03
 ADD CS, ES ; 02 02 04
 ADD CS, HS ; 02 02 05
 ADD CS, LS ; 02 02 06
+ADD CS, $CD ; 02 02 80 CD
 
+; ; 03系
 ADD DS, AS ; 02 03 00
 ADD DS, BS ; 02 03 01
 ADD DS, CS ; 02 03 02
-ADD DS, $CD ; 02 03 03 CD
 ADD DS, ES ; 02 03 04
 ADD DS, HS ; 02 03 05
 ADD DS, LS ; 02 03 06
-ADD DS, |HS| ; 02 03 31
-ADD DS, |LS| ; 02 03 32
-ADD DS, |HX:BX| ; 02 03 50
-ADD DS, |HX:LX| ; 02 03 51
-ADD DS, |KX:HX:BX| ; 02 03 60
-ADD DS, |KX:HX:LX| ; 02 03 61
+ADD DS, |HX| ; 02 03 1A
+ADD DS, |LX| ; 02 03 1B
+ADD DS, |HX:BX| ; 02 03 25
+ADD DS, |HX:LX| ; 02 03 26
+ADD DS, |KX:HX:BX| ; 02 03 2D
+ADD DS, |KX:HX:LX| ; 02 03 2E
+ADD DS, $CD ; 02 03 80 CD
 
+; ; 04系
 ADD ES, AS ; 02 04 00
 ADD ES, BS ; 02 04 01
 ADD ES, CS ; 02 04 02
 ADD ES, DS ; 02 04 03
-ADD ES, $CD ; 02 04 04 CD
 ADD ES, HS ; 02 04 05
 ADD ES, LS ; 02 04 06
-ADD ES, |HS| ; 02 04 31
-ADD ES, |LS| ; 02 04 32
-ADD ES, |HX:BX| ; 02 04 50
-ADD ES, |HX:LX| ; 02 04 51
+ADD ES, |HX| ; 02 04 1A
+ADD ES, |LX| ; 02 04 1B
+ADD ES, |HX:BX| ; 02 04 25
+ADD ES, |HX:LX| ; 02 04 26
+ADD ES, |KX:HX:BX| ; 02 04 2D
+ADD ES, |KX:HX:LX| ; 02 04 2E
+ADD ES, $CD ; 02 04 80 CD
 
+; ; 05系
 ADD HS, AS ; 02 05 00
 ADD HS, BS ; 02 05 01
 ADD HS, CS ; 02 05 02
 ADD HS, DS ; 02 05 03
 ADD HS, ES ; 02 05 04
-ADD HS, $CD ; 02 05 05 CD
 ADD HS, LS ; 02 05 06
+ADD HS, $CD ; 02 05 80 CD
 
+; ; 06系
 ADD LS, AS ; 02 06 00
 ADD LS, BS ; 02 06 01
 ADD LS, CS ; 02 06 02
 ADD LS, DS ; 02 06 03
 ADD LS, ES ; 02 06 04
 ADD LS, HS ; 02 06 05
-ADD LS, $CD ; 02 06 06 CD
+ADD LS, $CD ; 02 06 80 CD
 
 
 
+; 03系
 DEC AS ; 03 00 00
 DEC BS ; 03 00 01
 DEC CS ; 03 00 02
@@ -215,165 +252,198 @@ DEC DS ; 03 00 03
 DEC ES ; 03 00 04
 DEC HS ; 03 00 05
 DEC LS ; 03 00 06
-DEC |BX| ; 03 00 30
-DEC |HX| ; 03 00 31
-DEC |LX| ; 03 00 32
-DEC |HX:BX| ; 03 00 50
-DEC |HX:LX| ; 03 00 51
+DEC |BX| ; 03 00 19
+DEC |HX| ; 03 00 1A
+DEC |LX| ; 03 00 1B
+DEC |HX:BX| ; 03 00 25
+DEC |HX:LX| ; 03 00 26
+DEC |KX:HX:BX| ; 03 00 2D
+DEC |KX:HX:LX| ; 03 00 2E
 
 
 
-SUB AS, $CD ; B1 00 CD
-SUB AS, BS ; B1 01
-SUB AS, CS ; B1 02
-SUB AS, DS ; B1 03
-SUB AS, ES ; B1 04
-SUB AS, HS ; B1 05
-SUB AS, LS ; B1 06
-SUB AS, <HX> ; B1 09
-SUB AS, <LX> ; B1 0A
-SUB AS, <HX:BX> ; B1 0D
-SUB AS, <HX:LX> ; B1 0E
+; 04系
+; ; 00系
+SUB AS, BS ; 04 00 01
+SUB AS, CS ; 04 00 02
+SUB AS, DS ; 04 00 03
+SUB AS, ES ; 04 00 04
+SUB AS, HS ; 04 00 05
+SUB AS, LS ; 04 00 06
+SUB AS, |HX| ; 04 00 1A
+SUB AS, |LX| ; 04 00 1B
+SUB AS, |HX:BX| ; 04 00 25
+SUB AS, |HX:LX| ; 04 00 26
+SUB AS, |KX:HX:BX| ; 04 00 2D
+SUB AS, |KX:HX:LX| ; 04 00 2E
+SUB AS, $CD ; 04 00 80 CD
 
-SUB BS, AS ; B1 10
-SUB BS, $CD ; B1 11 CD
-SUB BS, CS ; B1 12
-SUB BS, DS ; B1 13
-SUB BS, ES ; B1 14
-SUB BS, HS ; B1 15
-SUB BS, LS ; B1 16
+; ; 01系
+SUB BS, AS ; 04 01 00
+SUB BS, CS ; 04 01 02
+SUB BS, DS ; 04 01 03
+SUB BS, ES ; 04 01 04
+SUB BS, HS ; 04 01 05
+SUB BS, LS ; 04 01 06
+SUB BS, $CD ; 04 01 80 CD
 
-SUB CS, AS ; B1 20
-SUB CS, BS ; B1 21
-SUB CS, $CD ; B1 22 CD
-SUB CS, DS ; B1 23
-SUB CS, ES ; B1 24
-SUB CS, HS ; B1 25
-SUB CS, LS ; B1 26
+; ; 02系
+SUB CS, AS ; 04 02 00
+SUB CS, BS ; 04 02 01
+SUB CS, DS ; 04 02 03
+SUB CS, ES ; 04 02 04
+SUB CS, HS ; 04 02 05
+SUB CS, LS ; 04 02 06
+SUB CS, $CD ; 04 02 80 CD
 
-SUB DS, AS ; B1 30
-SUB DS, BS ; B1 31
-SUB DS, CS ; B1 32
-SUB DS, $CD ; B1 33 CD
-SUB DS, ES ; B1 34
-SUB DS, HS ; B1 35
-SUB DS, LS ; B1 36
-SUB DS, <HX> ; B1 39
-SUB DS, <LX> ; B1 3A
-SUB DS, <HX:BX> ; B1 3D
-SUB DS, <HX:LX> ; B1 3E
+; ; 03系
+SUB DS, AS ; 04 03 00
+SUB DS, BS ; 04 03 01
+SUB DS, CS ; 04 03 02
+SUB DS, ES ; 04 03 04
+SUB DS, HS ; 04 03 05
+SUB DS, LS ; 04 03 06
+SUB DS, |HX| ; 04 03 1A
+SUB DS, |LX| ; 04 03 1B
+SUB DS, |HX:BX| ; 04 03 25
+SUB DS, |HX:LX| ; 04 03 26
+SUB DS, |KX:HX:BX| ; 04 03 2D
+SUB DS, |KX:HX:LX| ; 04 03 2E
+SUB DS, $CD ; 04 03 80 CD
 
-SUB ES, AS ; B1 40
-SUB ES, BS ; B1 41
-SUB ES, CS ; B1 42
-SUB ES, DS ; B1 43
-SUB ES, $CD ; B1 44 CD
-SUB ES, HS ; B1 45
-SUB ES, LS ; B1 46
-SUB ES, <HX> ; B1 49
-SUB ES, <LX> ; B1 4A
-SUB ES, <HX:BX> ; B1 4D
-SUB ES, <HX:LX> ; B1 4E
+; ; 04系
+SUB ES, AS ; 04 04 00
+SUB ES, BS ; 04 04 01
+SUB ES, CS ; 04 04 02
+SUB ES, DS ; 04 04 03
+SUB ES, HS ; 04 04 05
+SUB ES, LS ; 04 04 06
+SUB ES, |HX| ; 04 04 1A
+SUB ES, |LX| ; 04 04 1B
+SUB ES, |HX:BX| ; 04 04 25
+SUB ES, |HX:LX| ; 04 04 26
+SUB ES, |KX:HX:BX| ; 04 04 2D
+SUB ES, |KX:HX:LX| ; 04 04 2E
+SUB ES, $CD ; 04 04 80 CD
 
-SUB HS, AS ; B1 50
-SUB HS, BS ; B1 51
-SUB HS, CS ; B1 52
-SUB HS, DS ; B1 53
-SUB HS, ES ; B1 54
-SUB HS, $CD ; B1 55 CD
-SUB HS, LS ; B1 56
+; ; 05系
+SUB HS, AS ; 04 05 00
+SUB HS, BS ; 04 05 01
+SUB HS, CS ; 04 05 02
+SUB HS, DS ; 04 05 03
+SUB HS, ES ; 04 05 04
+SUB HS, LS ; 04 05 06
+SUB HS, $CD ; 04 05 80 CD
 
-SUB LS, AS ; B1 60
-SUB LS, BS ; B1 61
-SUB LS, CS ; B1 62
-SUB LS, DS ; B1 63
-SUB LS, ES ; B1 64
-SUB LS, HS ; B1 65
-SUB LS, $CD ; B1 66 CD
-
-
-
-LD AS, $CD ; 82 00 CD
-LD AS, BS ; 82 01
-LD AS, CS ; 82 02
-LD AS, DS ; 82 03
-LD AS, ES ; 82 04
-LD AS, HS ; 82 05
-LD AS, LS ; 82 06
-LD AS, <BX> ; 82 08
-LD AS, <HX> ; 82 09
-LD AS, <LX> ; 82 0A
-LD AS, <HX:BX> ; 82 0D
-LD AS, <HX:LX> ; 82 0E
-
-LD BS, AS ; 82 10
-LD BS, $CD ; 82 11 CD
-LD BS, CS ; 82 12
-LD BS, DS ; 82 13
-LD BS, ES ; 82 14
-LD BS, HS ; 82 15
-LD BS, LS ; 82 16
-
-LD CS, AS ; 82 20
-LD CS, BS ; 82 21
-LD CS, $CD ; 82 22 CD
-LD CS, DS ; 82 23
-LD CS, ES ; 82 24
-LD CS, HS ; 82 25
-LD CS, LS ; 82 26
-
-LD DS, AS ; 82 30
-LD DS, BS ; 82 31
-LD DS, CS ; 82 32
-LD DS, $CD ; 82 33 CD
-LD DS, ES ; 82 34
-LD DS, HS ; 82 35
-LD DS, LS ; 82 36
-LD DS, <BX> ; 82 38
-LD DS, <HX> ; 82 39
-LD DS, <LX> ; 82 3A
-LD DS, <HX:BX> ; 82 3D
-LD DS, <HX:LX> ; 82 3E
-LD DS, <$CDEFC0C1> ; 82 3F C1 C0 EF CD
-
-LD ES, AS ; 82 40
-LD ES, BS ; 82 41
-LD ES, CS ; 82 42
-LD ES, DS ; 82 43
-LD ES, $CD ; 82 44 CD
-LD ES, HS ; 82 45
-LD ES, LS ; 82 46
-LD ES, <BX> ; 82 48
-LD ES, <HX> ; 82 49
-LD ES, <LX> ; 82 4A
-LD ES, <HX:BX> ; 82 4D
-LD ES, <HX:LX> ; 82 4E
-LD ES, <$CDEFC0C1> ; 82 4F C1 C0 EF CD
-
-LD HS, AS ; 82 50
-LD HS, BS ; 82 51
-LD HS, CS ; 82 52
-LD HS, DS ; 82 53
-LD HS, ES ; 82 54
-LD HS, $CD ; 82 55 CD
-LD HS, LS ; 82 56
-
-LD LS, AS ; 82 60
-LD LS, BS ; 82 61
-LD LS, CS ; 82 62
-LD LS, DS ; 82 63
-LD LS, ES ; 82 64
-LD LS, HS ; 82 65
-LD LS, $CD ; 82 66 CD
+; ; 06系
+SUB LS, AS ; 04 06 00
+SUB LS, BS ; 04 06 01
+SUB LS, CS ; 04 06 02
+SUB LS, DS ; 04 06 03
+SUB LS, ES ; 04 06 04
+SUB LS, HS ; 04 06 05
+SUB LS, $CD ; 04 06 80 CD
 
 
 
-SV <$CDEFC0C1>, AS ; 92 F0 C1 C0 EF CD
-SV <BX>, DS ; 92 83
-SV <HX>, DS ; 92 93
-SV <LX>, DS ; 92 A3
-SV <HX:BX>, DS ; 92 D3
-SV <HX:LX>, DS ; 92 E3
+; 05系
+; ; 00系
+LD AS, BS ; 05 00 01
+LD AS, CS ; 05 00 02
+LD AS, DS ; 05 00 03
+LD AS, ES ; 05 00 04
+LD AS, HS ; 05 00 05
+LD AS, LS ; 05 00 06
+LD AS, |BX| ; 05 00 19
+LD AS, |HX| ; 05 00 1A
+LD AS, |LX| ; 05 00 1B
+LD AS, |HX:BX| ; 05 00 25
+LD AS, |HX:LX| ; 05 00 26
+LD AS, |KX:HX:BX| ; 05 00 2D
+LD AS, |KX:HX:LX| ; 05 00 2E
+LD AS, $CD ; 05 00 80 CD
+
+; ; 01系
+LD BS, AS ; 05 01 00
+LD BS, CS ; 05 01 02
+LD BS, DS ; 05 01 03
+LD BS, ES ; 05 01 04
+LD BS, HS ; 05 01 05
+LD BS, LS ; 05 01 06
+LD BS, $CD ; 05 01 80 CD
+
+; ; 02系
+LD CS, AS ; 05 02 00
+LD CS, BS ; 05 02 01
+LD CS, DS ; 05 02 03
+LD CS, ES ; 05 02 04
+LD CS, HS ; 05 02 05
+LD CS, LS ; 05 02 06
+LD CS, $CD ; 05 02 80 CD
+
+; ; 03系
+LD DS, AS ; 05 03 00
+LD DS, BS ; 05 03 01
+LD DS, CS ; 05 03 02
+LD DS, ES ; 05 03 04
+LD DS, HS ; 05 03 05
+LD DS, LS ; 05 03 06
+LD DS, |BX| ; 05 03 19
+LD DS, |HX| ; 05 03 1A
+LD DS, |LX| ; 05 03 1B
+LD DS, |HX:BX| ; 05 03 25
+LD DS, |HX:LX| ; 05 03 26
+LD DS, |KX:HX:BX| ; 05 03 2D
+LD DS, |KX:HX:LX| ; 05 03 2E
+LD DS, |$CDEFC0C1C2C3C4C5| ; 05 03 90 C5 C4 C3 C2 C1 EF CD
+LD DS, $CD ; 05 03 80 CD
+
+; ; 04系
+LD ES, AS ; 05 04 00
+LD ES, BS ; 05 04 01
+LD ES, CS ; 05 04 02
+LD ES, DS ; 05 04 03
+LD ES, HS ; 05 04 05
+LD ES, LS ; 05 04 06
+LD ES, |BX| ; 05 04 19
+LD ES, |HX| ; 05 04 1A
+LD ES, |LX| ; 05 04 1B
+LD ES, |HX:BX| ; 05 04 25
+LD ES, |HX:LX| ; 05 04 26
+LD ES, |KX:HX:BX| ; 05 04 2D
+LD ES, |KX:HX:LX| ; 05 04 2E
+LD ES, |$CDEFC0C1C2C3C4C5| ; 05 04 90 C5 C4 C3 C2 C1 EF CD
+LD ES, $CD ; 05 04 80 CD
+
+; ; 05系
+LD HS, AS ; 05 05 00
+LD HS, BS ; 05 05 01
+LD HS, CS ; 05 05 02
+LD HS, DS ; 05 05 03
+LD HS, ES ; 05 05 04
+LD HS, LS ; 05 05 06
+LD HS, $CD ; 05 05 80 CD
+
+; ; 06系
+LD LS, AS ; 05 06 00
+LD LS, BS ; 05 06 01
+LD LS, CS ; 05 06 02
+LD LS, DS ; 05 06 03
+LD LS, ES ; 05 06 04
+LD LS, HS ; 05 06 05
+LD LS, $CD ; 05 06 80 CD
+
+
+
+; 06系
+SV |BX|, DS ; 06 19 03
+SV |HX|, DS ; 06 1A 03
+SV |LX|, DS ; 06 1B 03
+SV |HX:BX|, DS ; 06 25 03
+SV |HX:LX|, DS ; 06 26 03
+SV |KX:HX:BX|, DS ; 06 2D 03
+SV |KX:HX:LX|, DS ; 06 2E 03
+SV |$CDEFC0C1C2C3C4C5|, AS ; 06 80 C5 C4 C3 C2 C1 EF CD
 
 
 
