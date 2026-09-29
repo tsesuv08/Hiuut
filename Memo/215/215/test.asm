@@ -136,12 +136,12 @@
 
 ;;;;;;  8Bit Inst ;;;;;;
 
-; 00系
+; 00
 	NOP ; 00
 
 
 
-; 01系
+; 01
 	INC AS ; 01 00
 	INC BS ; 01 01
 	INC CS ; 01 02
@@ -159,9 +159,9 @@
 
 
 
-; 02系
+; 02
 
-	; ; 00系
+	; 00
 		ADD AS, BS ; 02 00 01
 		ADD AS, CS ; 02 00 02
 		ADD AS, DS ; 02 00 03
@@ -176,7 +176,7 @@
 		ADD AS, |KX:HX:LX| ; 02 00 2E
 		ADD AS, $CD ; 02 00 80 CD
 
-	; ; 01系
+	; 01
 		ADD BS, AS ; 02 01 00
 		ADD BS, CS ; 02 01 02
 		ADD BS, DS ; 02 01 03
@@ -185,7 +185,7 @@
 		ADD BS, LS ; 02 01 06
 		ADD BS, $CD ; 02 01 80 CD
 
-	; ; 02系
+	; 02
 		ADD CS, AS ; 02 02 00
 		ADD CS, BS ; 02 02 01
 		ADD CS, DS ; 02 02 03
@@ -194,7 +194,7 @@
 		ADD CS, LS ; 02 02 06
 		ADD CS, $CD ; 02 02 80 CD
 
-	; ; 03系
+	; 03
 		ADD DS, AS ; 02 03 00
 		ADD DS, BS ; 02 03 01
 		ADD DS, CS ; 02 03 02
@@ -209,7 +209,7 @@
 		ADD DS, |KX:HX:LX| ; 02 03 2E
 		ADD DS, $CD ; 02 03 80 CD
 
-	; ; 04系
+	; 04
 		ADD ES, AS ; 02 04 00
 		ADD ES, BS ; 02 04 01
 		ADD ES, CS ; 02 04 02
@@ -224,7 +224,7 @@
 		ADD ES, |KX:HX:LX| ; 02 04 2E
 		ADD ES, $CD ; 02 04 80 CD
 
-	; ; 05系
+	; 05
 		ADD HS, AS ; 02 05 00
 		ADD HS, BS ; 02 05 01
 		ADD HS, CS ; 02 05 02
@@ -233,7 +233,7 @@
 		ADD HS, LS ; 02 05 06
 		ADD HS, $CD ; 02 05 80 CD
 
-	; ; 06系
+	; 06
 		ADD LS, AS ; 02 06 00
 		ADD LS, BS ; 02 06 01
 		ADD LS, CS ; 02 06 02
@@ -244,7 +244,7 @@
 
 
 
-; 03系
+; 03
 	DEC AS ; 03 00 00
 	DEC BS ; 03 00 01
 	DEC CS ; 03 00 02
@@ -262,8 +262,8 @@
 
 
 
-; 04系
-	; ; 00系
+; 04
+	; 00
 		SUB AS, BS ; 04 00 01
 		SUB AS, CS ; 04 00 02
 		SUB AS, DS ; 04 00 03
@@ -278,7 +278,7 @@
 		SUB AS, |KX:HX:LX| ; 04 00 2E
 		SUB AS, $CD ; 04 00 80 CD
 
-	; ; 01系
+	; 01
 		SUB BS, AS ; 04 01 00
 		SUB BS, CS ; 04 01 02
 		SUB BS, DS ; 04 01 03
@@ -287,7 +287,7 @@
 		SUB BS, LS ; 04 01 06
 		SUB BS, $CD ; 04 01 80 CD
 
-	; ; 02系
+	; 02
 		SUB CS, AS ; 04 02 00
 		SUB CS, BS ; 04 02 01
 		SUB CS, DS ; 04 02 03
@@ -296,7 +296,7 @@
 		SUB CS, LS ; 04 02 06
 		SUB CS, $CD ; 04 02 80 CD
 
-	; ; 03系
+	; 03
 		SUB DS, AS ; 04 03 00
 		SUB DS, BS ; 04 03 01
 		SUB DS, CS ; 04 03 02
@@ -311,7 +311,7 @@
 		SUB DS, |KX:HX:LX| ; 04 03 2E
 		SUB DS, $CD ; 04 03 80 CD
 
-	; ; 04系
+	; 04
 		SUB ES, AS ; 04 04 00
 		SUB ES, BS ; 04 04 01
 		SUB ES, CS ; 04 04 02
@@ -326,7 +326,7 @@
 		SUB ES, |KX:HX:LX| ; 04 04 2E
 		SUB ES, $CD ; 04 04 80 CD
 
-	; ; 05系
+	; 05
 		SUB HS, AS ; 04 05 00
 		SUB HS, BS ; 04 05 01
 		SUB HS, CS ; 04 05 02
@@ -335,7 +335,7 @@
 		SUB HS, LS ; 04 05 06
 		SUB HS, $CD ; 04 05 80 CD
 
-	; ; 06系
+	; 06
 		SUB LS, AS ; 04 06 00
 		SUB LS, BS ; 04 06 01
 		SUB LS, CS ; 04 06 02
@@ -346,8 +346,8 @@
 
 
 
-; 05系
-	; ; 00系
+; 05
+	; 00
 		LD AS, BS ; 05 00 01
 		LD AS, CS ; 05 00 02
 		LD AS, DS ; 05 00 03
@@ -363,7 +363,7 @@
 		LD AS, |KX:HX:LX| ; 05 00 2E
 		LD AS, $CD ; 05 00 80 CD
 
-	; ; 01系
+	; 01
 		LD BS, AS ; 05 01 00
 		LD BS, CS ; 05 01 02
 		LD BS, DS ; 05 01 03
@@ -372,7 +372,7 @@
 		LD BS, LS ; 05 01 06
 		LD BS, $CD ; 05 01 80 CD
 
-	; ; 02系
+	; 02
 		LD CS, AS ; 05 02 00
 		LD CS, BS ; 05 02 01
 		LD CS, DS ; 05 02 03
@@ -381,7 +381,7 @@
 		LD CS, LS ; 05 02 06
 		LD CS, $CD ; 05 02 80 CD
 
-	; ; 03系
+	; 03
 		LD DS, AS ; 05 03 00
 		LD DS, BS ; 05 03 01
 		LD DS, CS ; 05 03 02
@@ -398,7 +398,7 @@
 		LD DS, |$CDEFC0C1C2C3C4C5| ; 05 03 90 C5 C4 C3 C2 C1 EF CD
 		LD DS, $CD ; 05 03 80 CD
 
-	; ; 04系
+	; 04
 		LD ES, AS ; 05 04 00
 		LD ES, BS ; 05 04 01
 		LD ES, CS ; 05 04 02
@@ -415,7 +415,7 @@
 		LD ES, |$CDEFC0C1C2C3C4C5| ; 05 04 90 C5 C4 C3 C2 C1 EF CD
 		LD ES, $CD ; 05 04 80 CD
 
-	; ; 05系
+	; 05
 		LD HS, AS ; 05 05 00
 		LD HS, BS ; 05 05 01
 		LD HS, CS ; 05 05 02
@@ -424,7 +424,7 @@
 		LD HS, LS ; 05 05 06
 		LD HS, $CD ; 05 05 80 CD
 
-	; ; 06系
+	; 06
 		LD LS, AS ; 05 06 00
 		LD LS, BS ; 05 06 01
 		LD LS, CS ; 05 06 02
@@ -435,20 +435,20 @@
 
 
 
-	; 06系
-		SV |BX|, DS ; 06 19 03
-		SV |HX|, DS ; 06 1A 03
-		SV |LX|, DS ; 06 1B 03
-		SV |HX:BX|, DS ; 06 25 03
-		SV |HX:LX|, DS ; 06 26 03
-		SV |KX:HX:BX|, DS ; 06 2D 03
-		SV |KX:HX:LX|, DS ; 06 2E 03
-		SV |$CDEFC0C1C2C3C4C5|, AS ; 06 80 C5 C4 C3 C2 C1 EF CD
+; 06
+	SV |BX|, DS ; 06 19 03
+	SV |HX|, DS ; 06 1A 03
+	SV |LX|, DS ; 06 1B 03
+	SV |HX:BX|, DS ; 06 25 03
+	SV |HX:LX|, DS ; 06 26 03
+	SV |KX:HX:BX|, DS ; 06 2D 03
+	SV |KX:HX:LX|, DS ; 06 2E 03
+	SV |$CDEFC0C1C2C3C4C5|, AS ; 06 80 C5 C4 C3 C2 C1 EF CD
 
 
 
-; 07系
-	; ; 00系
+; 07
+	; 00
 		OR AS, BS ; 07 00 01
 		OR AS, CS ; 07 00 02
 		OR AS, DS ; 07 00 03
@@ -457,7 +457,7 @@
 		OR AS, LS ; 07 00 06
 		OR AS, $CD ; 07 00 80 CD
 
-	; ; 01系
+	; 01
 		OR BS, AS ; 07 01 00
 		OR BS, CS ; 07 01 12
 		OR BS, DS ; 07 01 13
@@ -466,7 +466,7 @@
 		OR BS, LS ; 07 01 06
 		OR BS, $CD ; 07 01 80 CD
 
-	; ; 02系
+	; 02
 		OR CS, AS ; 07 02 00
 		OR CS, BS ; 07 02 01
 		OR CS, DS ; 07 02 03
@@ -475,7 +475,7 @@
 		OR CS, LS ; 07 02 06
 		OR CS, $CD ; 07 02 80 CD
 
-	; ; 03系
+	; 03
 		OR DS, AS ; 07 03 00
 		OR DS, BS ; 07 03 01
 		OR DS, CS ; 07 03 02
@@ -484,7 +484,7 @@
 		OR DS, LS ; 07 03 06
 		OR DS, $CD ; 07 03 80 CD
 
-	; ; 04系
+	; 04
 		OR ES, AS ; 07 04 00
 		OR ES, BS ; 07 04 01
 		OR ES, CS ; 07 04 02
@@ -493,7 +493,7 @@
 		OR ES, LS ; 07 04 06
 		OR ES, $CD ; 07 04 80 CD
 
-	; ; 05系
+	; 05
 		OR HS, AS ; 07 05 00
 		OR HS, BS ; 07 05 01
 		OR HS, CS ; 07 05 02
@@ -502,7 +502,7 @@
 		OR HS, LS ; 07 05 06
 		OR HS, $CD ; 07 05 80 CD
 
-	; ; 06系
+	; 06
 		OR LS, AS ; 07 06 00
 		OR LS, BS ; 07 06 01
 		OR LS, CS ; 07 06 02
@@ -513,529 +513,608 @@
 
 
 
-; 08系
-	; ; 00系
-NOR AS, $CD ; 93 00 CD
-NOR AS, BS ; 93 01
-NOR AS, CS ; 93 02
-NOR AS, DS ; 93 03
-NOR AS, ES ; 93 04
-NOR AS, HS ; 93 05
-NOR AS, LS ; 93 06
+; 08
+	; 00
+		NOR AS, $CD ; 93 00 CD
+		NOR AS, BS ; 93 01
+		NOR AS, CS ; 93 02
+		NOR AS, DS ; 93 03
+		NOR AS, ES ; 93 04
+		NOR AS, HS ; 93 05
+		NOR AS, LS ; 93 06
 
-NOR BS, AS ; 93 10
-NOR BS, $CD ; 93 11 CD
-NOR BS, CS ; 93 12
-NOR BS, DS ; 93 13
-NOR BS, ES ; 93 14
-NOR BS, HS ; 93 15
-NOR BS, LS ; 93 16
+	; 01
+		NOR BS, AS ; 93 10
+		NOR BS, $CD ; 93 11 CD
+		NOR BS, CS ; 93 12
+		NOR BS, DS ; 93 13
+		NOR BS, ES ; 93 14
+		NOR BS, HS ; 93 15
+		NOR BS, LS ; 93 16
 
-NOR CS, AS ; 93 20
-NOR CS, BS ; 93 21
-NOR CS, $CD ; 93 22 CD
-NOR CS, DS ; 93 23
-NOR CS, ES ; 93 24
-NOR CS, HS ; 93 25
-NOR CS, LS ; 93 26
+	; 02
+		NOR CS, AS ; 93 20
+		NOR CS, BS ; 93 21
+		NOR CS, $CD ; 93 22 CD
+		NOR CS, DS ; 93 23
+		NOR CS, ES ; 93 24
+		NOR CS, HS ; 93 25
+		NOR CS, LS ; 93 26
 
-NOR DS, AS ; 93 30
-NOR DS, BS ; 93 31
-NOR DS, CS ; 93 32
-NOR DS, $CD ; 93 33 CD
-NOR DS, ES ; 93 34
-NOR DS, HS ; 93 35
-NOR DS, LS ; 93 36
+	; 03
+		NOR DS, AS ; 93 30
+		NOR DS, BS ; 93 31
+		NOR DS, CS ; 93 32
+		NOR DS, $CD ; 93 33 CD
+		NOR DS, ES ; 93 34
+		NOR DS, HS ; 93 35
+		NOR DS, LS ; 93 36
 
-NOR ES, AS ; 93 40
-NOR ES, BS ; 93 41
-NOR ES, CS ; 93 42
-NOR ES, DS ; 93 43
-NOR ES, $CD ; 93 44 CD
-NOR ES, HS ; 93 45
-NOR ES, LS ; 93 46
+	; 04
+		NOR ES, AS ; 93 40
+		NOR ES, BS ; 93 41
+		NOR ES, CS ; 93 42
+		NOR ES, DS ; 93 43
+		NOR ES, $CD ; 93 44 CD
+		NOR ES, HS ; 93 45
+		NOR ES, LS ; 93 46
 
-NOR HS, AS ; 93 50
-NOR HS, BS ; 93 51
-NOR HS, CS ; 93 52
-NOR HS, DS ; 93 53
-NOR HS, ES ; 93 54
-NOR HS, $CD ; 93 55 CD
-NOR HS, LS ; 93 56
+	; 05
+		NOR HS, AS ; 93 50
+		NOR HS, BS ; 93 51
+		NOR HS, CS ; 93 52
+		NOR HS, DS ; 93 53
+		NOR HS, ES ; 93 54
+		NOR HS, $CD ; 93 55 CD
+		NOR HS, LS ; 93 56
 
-NOR LS, AS ; 93 60
-NOR LS, BS ; 93 61
-NOR LS, CS ; 93 62
-NOR LS, DS ; 93 63
-NOR LS, ES ; 93 64
-NOR LS, HS ; 93 65
-NOR LS, $CD ; 93 66 CD
-
-
-
-AND AS, $CD ; A3 00 CD
-AND AS, BS ; A3 01
-AND AS, CS ; A3 02
-AND AS, DS ; A3 03
-AND AS, ES ; A3 04
-AND AS, HS ; A3 05
-AND AS, LS ; A3 06
-
-AND BS, AS ; A3 10
-AND BS, $CD ; A3 11 CD
-AND BS, CS ; A3 12
-AND BS, DS ; A3 13
-AND BS, ES ; A3 14
-AND BS, HS ; A3 15
-AND BS, LS ; A3 16
-
-AND CS, AS ; A3 20
-AND CS, BS ; A3 21
-AND CS, $CD ; A3 22 CD
-AND CS, DS ; A3 23
-AND CS, ES ; A3 24
-AND CS, HS ; A3 25
-AND CS, LS ; A3 26
-
-AND DS, AS ; A3 30
-AND DS, BS ; A3 31
-AND DS, CS ; A3 32
-AND DS, $CD ; A3 33 CD
-AND DS, ES ; A3 34
-AND DS, HS ; A3 35
-AND DS, LS ; A3 36
-
-AND ES, AS ; A3 40
-AND ES, BS ; A3 41
-AND ES, CS ; A3 42
-AND ES, DS ; A3 43
-AND ES, $CD ; A3 44 CD
-AND ES, HS ; A3 45
-AND ES, LS ; A3 46
-
-AND HS, AS ; A3 50
-AND HS, BS ; A3 51
-AND HS, CS ; A3 52
-AND HS, DS ; A3 53
-AND HS, ES ; A3 54
-AND HS, $CD ; A3 55 CD
-AND HS, LS ; A3 56
-
-AND LS, AS ; A3 60
-AND LS, BS ; A3 61
-AND LS, CS ; A3 62
-AND LS, DS ; A3 63
-AND LS, ES ; A3 64
-AND LS, HS ; A3 65
-AND LS, $CD ; A3 66 CD
+	; 06
+		NOR LS, AS ; 93 60
+		NOR LS, BS ; 93 61
+		NOR LS, CS ; 93 62
+		NOR LS, DS ; 93 63
+		NOR LS, ES ; 93 64
+		NOR LS, HS ; 93 65
+		NOR LS, $CD ; 93 66 CD
 
 
 
-NND AS, $CD ; B3 00 CD
-NND AS, BS ; B3 01
-NND AS, CS ; B3 02
-NND AS, DS ; B3 03
-NND AS, ES ; B3 04
-NND AS, HS ; B3 05
-NND AS, LS ; B3 06
+; 09
+	; 00
+		AND AS, $CD ; A3 00 CD
+		AND AS, BS ; A3 01
+		AND AS, CS ; A3 02
+		AND AS, DS ; A3 03
+		AND AS, ES ; A3 04
+		AND AS, HS ; A3 05
+		AND AS, LS ; A3 06
 
-NND BS, AS ; B3 10
-NND BS, $CD ; B3 11 CD
-NND BS, CS ; B3 12
-NND BS, DS ; B3 13
-NND BS, ES ; B3 14
-NND BS, HS ; B3 15
-NND BS, LS ; B3 16
+	; 01
+		AND BS, AS ; A3 10
+		AND BS, $CD ; A3 11 CD
+		AND BS, CS ; A3 12
+		AND BS, DS ; A3 13
+		AND BS, ES ; A3 14
+		AND BS, HS ; A3 15
+		AND BS, LS ; A3 16
 
-NND CS, AS ; B3 20
-NND CS, BS ; B3 21
-NND CS, $CD ; B3 22 CD
-NND CS, DS ; B3 23
-NND CS, ES ; B3 24
-NND CS, HS ; B3 25
-NND CS, LS ; B3 26
+	; 02
+		AND CS, AS ; A3 20
+		AND CS, BS ; A3 21
+		AND CS, $CD ; A3 22 CD
+		AND CS, DS ; A3 23
+		AND CS, ES ; A3 24
+		AND CS, HS ; A3 25
+		AND CS, LS ; A3 26
 
-NND DS, AS ; B3 30
-NND DS, BS ; B3 31
-NND DS, CS ; B3 32
-NND DS, $CD ; B3 33 CD
-NND DS, ES ; B3 34
-NND DS, HS ; B3 35
-NND DS, LS ; B3 36
+	; 03
+		AND DS, AS ; A3 30
+		AND DS, BS ; A3 31
+		AND DS, CS ; A3 32
+		AND DS, $CD ; A3 33 CD
+		AND DS, ES ; A3 34
+		AND DS, HS ; A3 35
+		AND DS, LS ; A3 36
 
-NND ES, AS ; B3 40
-NND ES, BS ; B3 41
-NND ES, CS ; B3 42
-NND ES, DS ; B3 43
-NND ES, $CD ; B3 44 CD
-NND ES, HS ; B3 45
-NND ES, LS ; B3 46
+	; 04
+		AND ES, AS ; A3 40
+		AND ES, BS ; A3 41
+		AND ES, CS ; A3 42
+		AND ES, DS ; A3 43
+		AND ES, $CD ; A3 44 CD
+		AND ES, HS ; A3 45
+		AND ES, LS ; A3 46
 
-NND HS, AS ; B3 50
-NND HS, BS ; B3 51
-NND HS, CS ; B3 52
-NND HS, DS ; B3 53
-NND HS, ES ; B3 54
-NND HS, $CD ; B3 55 CD
-NND HS, LS ; B3 56
+	; 05
+		AND HS, AS ; A3 50
+		AND HS, BS ; A3 51
+		AND HS, CS ; A3 52
+		AND HS, DS ; A3 53
+		AND HS, ES ; A3 54
+		AND HS, $CD ; A3 55 CD
+		AND HS, LS ; A3 56
 
-NND LS, AS ; B3 60
-NND LS, BS ; B3 61
-NND LS, CS ; B3 62
-NND LS, DS ; B3 63
-NND LS, ES ; B3 64
-NND LS, HS ; B3 65
-NND LS, $CD ; B3 66 CD
-
-
-
-XOR AS, $CD ; C3 00 CD
-XOR AS, BS ; C3 01
-XOR AS, CS ; C3 02
-XOR AS, DS ; C3 03
-XOR AS, ES ; C3 04
-XOR AS, HS ; C3 05
-XOR AS, LS ; C3 06
-
-XOR BS, AS ; C3 10
-XOR BS, $CD ; C3 11 CD
-XOR BS, CS ; C3 12
-XOR BS, DS ; C3 13
-XOR BS, ES ; C3 14
-XOR BS, HS ; C3 15
-XOR BS, LS ; C3 16
-
-XOR CS, AS ; C3 20
-XOR CS, BS ; C3 21
-XOR CS, $CD ; C3 22 CD
-XOR CS, DS ; C3 23
-XOR CS, ES ; C3 24
-XOR CS, HS ; C3 25
-XOR CS, LS ; C3 26
-
-XOR DS, AS ; C3 30
-XOR DS, BS ; C3 31
-XOR DS, CS ; C3 32
-XOR DS, $CD ; C3 33 CD
-XOR DS, ES ; C3 34
-XOR DS, HS ; C3 35
-XOR DS, LS ; C3 36
-
-XOR ES, AS ; C3 40
-XOR ES, BS ; C3 41
-XOR ES, CS ; C3 42
-XOR ES, DS ; C3 43
-XOR ES, $CD ; C3 44 CD
-XOR ES, HS ; C3 45
-XOR ES, LS ; C3 46
-
-XOR HS, AS ; C3 50
-XOR HS, BS ; C3 51
-XOR HS, CS ; C3 52
-XOR HS, DS ; C3 53
-XOR HS, ES ; C3 54
-XOR HS, $CD ; C3 55 CD
-XOR HS, LS ; C3 56
-
-XOR LS, AS ; C3 60
-XOR LS, BS ; C3 61
-XOR LS, CS ; C3 62
-XOR LS, DS ; C3 63
-XOR LS, ES ; C3 64
-XOR LS, HS ; C3 65
-XOR LS, $CD ; C3 66 CD
+	; 06
+		AND LS, AS ; A3 60
+		AND LS, BS ; A3 61
+		AND LS, CS ; A3 62
+		AND LS, DS ; A3 63
+		AND LS, ES ; A3 64
+		AND LS, HS ; A3 65
+		AND LS, $CD ; A3 66 CD
 
 
 
-XNR AS, $CD ; D3 00 CD
-XNR AS, BS ; D3 01
-XNR AS, CS ; D3 02
-XNR AS, DS ; D3 03
-XNR AS, ES ; D3 04
-XNR AS, HS ; D3 05
-XNR AS, LS ; D3 06
+; 0A
+	; 00
+		NND AS, $CD ; B3 00 CD
+		NND AS, BS ; B3 01
+		NND AS, CS ; B3 02
+		NND AS, DS ; B3 03
+		NND AS, ES ; B3 04
+		NND AS, HS ; B3 05
+		NND AS, LS ; B3 06
 
-XNR BS, AS ; D3 10
-XNR BS, $CD ; D3 11 CD
-XNR BS, CS ; D3 12
-XNR BS, DS ; D3 13
-XNR BS, ES ; D3 14
-XNR BS, HS ; D3 15
-XNR BS, LS ; D3 16
+	; 01
+		NND BS, AS ; B3 10
+		NND BS, $CD ; B3 11 CD
+		NND BS, CS ; B3 12
+		NND BS, DS ; B3 13
+		NND BS, ES ; B3 14
+		NND BS, HS ; B3 15
+		NND BS, LS ; B3 16
 
-XNR CS, AS ; D3 20
-XNR CS, BS ; D3 21
-XNR CS, $CD ; D3 22 CD
-XNR CS, DS ; D3 23
-XNR CS, ES ; D3 24
-XNR CS, HS ; D3 25
-XNR CS, LS ; D3 26
+	; 02
+		NND CS, AS ; B3 20
+		NND CS, BS ; B3 21
+		NND CS, $CD ; B3 22 CD
+		NND CS, DS ; B3 23
+		NND CS, ES ; B3 24
+		NND CS, HS ; B3 25
+		NND CS, LS ; B3 26
 
-XNR DS, AS ; D3 30
-XNR DS, BS ; D3 31
-XNR DS, CS ; D3 32
-XNR DS, $CD ; D3 33 CD
-XNR DS, ES ; D3 34
-XNR DS, HS ; D3 35
-XNR DS, LS ; D3 36
+	; 03
+		NND DS, AS ; B3 30
+		NND DS, BS ; B3 31
+		NND DS, CS ; B3 32
+		NND DS, $CD ; B3 33 CD
+		NND DS, ES ; B3 34
+		NND DS, HS ; B3 35
+		NND DS, LS ; B3 36
 
-XNR ES, AS ; D3 40
-XNR ES, BS ; D3 41
-XNR ES, CS ; D3 42
-XNR ES, DS ; D3 43
-XNR ES, $CD ; D3 44 CD
-XNR ES, HS ; D3 45
-XNR ES, LS ; D3 46
+	; 04
+		NND ES, AS ; B3 40
+		NND ES, BS ; B3 41
+		NND ES, CS ; B3 42
+		NND ES, DS ; B3 43
+		NND ES, $CD ; B3 44 CD
+		NND ES, HS ; B3 45
+		NND ES, LS ; B3 46
 
-XNR HS, AS ; D3 50
-XNR HS, BS ; D3 51
-XNR HS, CS ; D3 52
-XNR HS, DS ; D3 53
-XNR HS, ES ; D3 54
-XNR HS, $CD ; D3 55 CD
-XNR HS, LS ; D3 56
+	; 05
+		NND HS, AS ; B3 50
+		NND HS, BS ; B3 51
+		NND HS, CS ; B3 52
+		NND HS, DS ; B3 53
+		NND HS, ES ; B3 54
+		NND HS, $CD ; B3 55 CD
+		NND HS, LS ; B3 56
 
-XNR LS, AS ; D3 60
-XNR LS, BS ; D3 61
-XNR LS, CS ; D3 62
-XNR LS, DS ; D3 63
-XNR LS, ES ; D3 64
-XNR LS, HS ; D3 65
-XNR LS, $CD ; D3 66 CD
-
-
-
-NOT AS ; E3 00
-NOT DS ; E3 03
-NOT ES ; E3 04
-NOT HS ; E3 05
-NOT LS ; E3 06
+	; 06
+		NND LS, AS ; B3 60
+		NND LS, BS ; B3 61
+		NND LS, CS ; B3 62
+		NND LS, DS ; B3 63
+		NND LS, ES ; B3 64
+		NND LS, HS ; B3 65
+		NND LS, $CD ; B3 66 CD
 
 
+
+; 0B
+	; 00
+		XOR AS, $CD ; C3 00 CD
+		XOR AS, BS ; C3 01
+		XOR AS, CS ; C3 02
+		XOR AS, DS ; C3 03
+		XOR AS, ES ; C3 04
+		XOR AS, HS ; C3 05
+		XOR AS, LS ; C3 06
+
+	; 01
+		XOR BS, AS ; C3 10
+		XOR BS, $CD ; C3 11 CD
+		XOR BS, CS ; C3 12
+		XOR BS, DS ; C3 13
+		XOR BS, ES ; C3 14
+		XOR BS, HS ; C3 15
+		XOR BS, LS ; C3 16
+
+	; 02
+		XOR CS, AS ; C3 20
+		XOR CS, BS ; C3 21
+		XOR CS, $CD ; C3 22 CD
+		XOR CS, DS ; C3 23
+		XOR CS, ES ; C3 24
+		XOR CS, HS ; C3 25
+		XOR CS, LS ; C3 26
+
+	; 03
+		XOR DS, AS ; C3 30
+		XOR DS, BS ; C3 31
+		XOR DS, CS ; C3 32
+		XOR DS, $CD ; C3 33 CD
+		XOR DS, ES ; C3 34
+		XOR DS, HS ; C3 35
+		XOR DS, LS ; C3 36
+
+	; 04
+		XOR ES, AS ; C3 40
+		XOR ES, BS ; C3 41
+		XOR ES, CS ; C3 42
+		XOR ES, DS ; C3 43
+		XOR ES, $CD ; C3 44 CD
+		XOR ES, HS ; C3 45
+		XOR ES, LS ; C3 46
+
+	; 05
+		XOR HS, AS ; C3 50
+		XOR HS, BS ; C3 51
+		XOR HS, CS ; C3 52
+		XOR HS, DS ; C3 53
+		XOR HS, ES ; C3 54
+		XOR HS, $CD ; C3 55 CD
+		XOR HS, LS ; C3 56
+
+	; 06
+		XOR LS, AS ; C3 60
+		XOR LS, BS ; C3 61
+		XOR LS, CS ; C3 62
+		XOR LS, DS ; C3 63
+		XOR LS, ES ; C3 64
+		XOR LS, HS ; C3 65
+		XOR LS, $CD ; C3 66 CD
+
+
+
+; 0C
+	; 00
+		XNR AS, $CD ; D3 00 CD
+		XNR AS, BS ; D3 01
+		XNR AS, CS ; D3 02
+		XNR AS, DS ; D3 03
+		XNR AS, ES ; D3 04
+		XNR AS, HS ; D3 05
+		XNR AS, LS ; D3 06
+
+	; 01
+		XNR BS, AS ; D3 10
+		XNR BS, $CD ; D3 11 CD
+		XNR BS, CS ; D3 12
+		XNR BS, DS ; D3 13
+		XNR BS, ES ; D3 14
+		XNR BS, HS ; D3 15
+		XNR BS, LS ; D3 16
+
+	; 02
+		XNR CS, AS ; D3 20
+		XNR CS, BS ; D3 21
+		XNR CS, $CD ; D3 22 CD
+		XNR CS, DS ; D3 23
+		XNR CS, ES ; D3 24
+		XNR CS, HS ; D3 25
+		XNR CS, LS ; D3 26
+
+	; 03
+		XNR DS, AS ; D3 30
+		XNR DS, BS ; D3 31
+		XNR DS, CS ; D3 32
+		XNR DS, $CD ; D3 33 CD
+		XNR DS, ES ; D3 34
+		XNR DS, HS ; D3 35
+		XNR DS, LS ; D3 36
+
+	; 04
+		XNR ES, AS ; D3 40
+		XNR ES, BS ; D3 41
+		XNR ES, CS ; D3 42
+		XNR ES, DS ; D3 43
+		XNR ES, $CD ; D3 44 CD
+		XNR ES, HS ; D3 45
+		XNR ES, LS ; D3 46
+
+	; 05
+		XNR HS, AS ; D3 50
+		XNR HS, BS ; D3 51
+		XNR HS, CS ; D3 52
+		XNR HS, DS ; D3 53
+		XNR HS, ES ; D3 54
+		XNR HS, $CD ; D3 55 CD
+		XNR HS, LS ; D3 56
+
+	; 06
+		XNR LS, AS ; D3 60
+		XNR LS, BS ; D3 61
+		XNR LS, CS ; D3 62
+		XNR LS, DS ; D3 63
+		XNR LS, ES ; D3 64
+		XNR LS, HS ; D3 65
+		XNR LS, $CD ; D3 66 CD
+
+
+
+; 0D
+		NOT AS ; E3 00
+		NOT DS ; E3 03
+		NOT ES ; E3 04
+		NOT HS ; E3 05
+		NOT LS ; E3 06
+
+
+; 0E
 ; 16Bit SFT/RTTでは結果はmod 8した回数と同じになる
-LST DS, $CD ; 84 33 CD
-LST DS, ES ; 84 34
-LST DS, HS ; 84 35
-LST DS, LS ; 84 36
+	; 00
 
-LST ES, DS ; 84 43
-LST ES, $CD ; 84 44 CD
-LST ES, HS ; 84 45
-LST ES, LS ; 84 46
+	; 03
+		LST DS, $CD ; 84 33 CD
+		LST DS, ES ; 84 34
+		LST DS, HS ; 84 35
+		LST DS, LS ; 84 36
 
-LST HS, DS ; 84 53
-LST HS, ES ; 84 54
-LST HS, $CD ; 84 55 CD
-LST HS, LS ; 84 56
+	; 04
+		LST ES, DS ; 84 43
+		LST ES, $CD ; 84 44 CD
+		LST ES, HS ; 84 45
+		LST ES, LS ; 84 46
 
-LST LS, DS ; 84 63
-LST LS, ES ; 84 64
-LST LS, HS ; 84 65
-LST LS, $CD ; 84 66 CD
+	; 05
+		LST HS, DS ; 84 53
+		LST HS, ES ; 84 54
+		LST HS, $CD ; 84 55 CD
+		LST HS, LS ; 84 56
 
-
-
-RST DS, $CD ; 94 33 CD
-RST DS, ES ; 94 34
-RST DS, HS ; 94 35
-RST DS, LS ; 94 36
-
-RST ES, DS ; 94 43
-RST ES, $CD ; 94 44 CD
-RST ES, HS ; 94 45
-RST ES, LS ; 94 46
-
-RST HS, DS ; 94 53
-RST HS, ES ; 94 54
-RST HS, $CD ; 94 55 CD
-RST HS, LS ; 94 56
-
-RST LS, DS ; 94 63
-RST LS, ES ; 94 64
-RST LS, HS ; 94 65
-RST LS, $CD ; 94 66 CD
+	; 06
+		LST LS, DS ; 84 63
+		LST LS, ES ; 84 64
+		LST LS, HS ; 84 65
+		LST LS, $CD ; 84 66 CD
 
 
 
-LRT DS, $CD ; A4 33 CD
-LRT DS, ES ; A4 34
-LRT DS, HS ; A4 35
-LRT DS, LS ; A4 36
+; 0F
+	; 00
+	; 03
+		RST DS, $CD ; 94 33 CD
+		RST DS, ES ; 94 34
+		RST DS, HS ; 94 35
+		RST DS, LS ; 94 36
 
-LRT ES, DS ; A4 43
-LRT ES, $CD ; A4 44 CD
-LRT ES, HS ; A4 45
-LRT ES, LS ; A4 46
+	; 04
+		RST ES, DS ; 94 43
+		RST ES, $CD ; 94 44 CD
+		RST ES, HS ; 94 45
+		RST ES, LS ; 94 46
 
-LRT HS, DS ; A4 53
-LRT HS, ES ; A4 54
-LRT HS, $CD ; A4 55 CD
-LRT HS, LS ; A4 56
+	; 05
+		RST HS, DS ; 94 53
+		RST HS, ES ; 94 54
+		RST HS, $CD ; 94 55 CD
+		RST HS, LS ; 94 56
 
-LRT LS, DS ; A4 63
-LRT LS, ES ; A4 64
-LRT LS, HS ; A4 65
-LRT LS, $CD ; A4 66 CD
-
-
-
-RRT DS, $CD ; B4 33 CD
-RRT DS, ES ; B4 34
-RRT DS, HS ; B4 35
-RRT DS, LS ; B4 36
-
-RRT ES, DS ; B4 43
-RRT ES, $CD ; B4 44 CD
-RRT ES, HS ; B4 45
-RRT ES, LS ; B4 46
-
-RRT HS, DS ; B4 53
-RRT HS, ES ; B4 54
-RRT HS, $CD ; B4 55 CD
-RRT HS, LS ; B4 56
-
-RRT LS, DS ; B4 63
-RRT LS, ES ; B4 64
-RRT LS, HS ; B4 65
-RRT LS, $CD ; B4 66 CD
+	; 06
+		RST LS, DS ; 94 63
+		RST LS, ES ; 94 64
+		RST LS, HS ; 94 65
+		RST LS, $CD ; 94 66 CD
 
 
 
-CMP AS, $CD ; 85 00 CD
-CMP AS, BS ; 85 01
-CMP AS, CS ; 85 02
-CMP AS, DS ; 85 03
-CMP AS, ES ; 85 04
-CMP AS, HS ; 85 05
-CMP AS, LS ; 85 06
+; 10
+	; 00
+	; 03
+		LRT DS, $CD ; A4 33 CD
+		LRT DS, ES ; A4 34
+		LRT DS, HS ; A4 35
+		LRT DS, LS ; A4 36
 
-CMP BS, AS ; 85 10
-CMP BS, $CD ; 85 11 CD
-CMP BS, CS ; 85 12
-CMP BS, DS ; 85 13
-CMP BS, ES ; 85 14
-CMP BS, HS ; 85 15
-CMP BS, LS ; 85 16
+	; 04
+		LRT ES, DS ; A4 43
+		LRT ES, $CD ; A4 44 CD
+		LRT ES, HS ; A4 45
+		LRT ES, LS ; A4 46
 
-CMP CS, AS ; 85 20
-CMP CS, BS ; 85 21
-CMP CS, $CD ; 85 22 CD
-CMP CS, DS ; 85 23
-CMP CS, ES ; 85 24
-CMP CS, HS ; 85 25
-CMP CS, LS ; 85 26
+	; 05
+		LRT HS, DS ; A4 53
+		LRT HS, ES ; A4 54
+		LRT HS, $CD ; A4 55 CD
+		LRT HS, LS ; A4 56
 
-CMP DS, AS ; 85 30
-CMP DS, BS ; 85 31
-CMP DS, CS ; 85 32
-CMP DS, $CD ; 85 33 CD
-CMP DS, ES ; 85 34
-CMP DS, HS ; 85 35
-CMP DS, LS ; 85 36
-
-CMP ES, AS ; 85 40
-CMP ES, BS ; 85 41
-CMP ES, CS ; 85 42
-CMP ES, DS ; 85 43
-CMP ES, $CD ; 85 44 CD
-CMP ES, HS ; 85 45
-CMP ES, LS ; 85 46
-
-CMP HS, AS ; 85 50
-CMP HS, BS ; 85 51
-CMP HS, CS ; 85 52
-CMP HS, DS ; 85 53
-CMP HS, ES ; 85 54
-CMP HS, $CD ; 85 55 CD
-CMP HS, LS ; 85 56
-
-CMP LS, AS ; 85 60
-CMP LS, BS ; 85 61
-CMP LS, CS ; 85 62
-CMP LS, DS ; 85 63
-CMP LS, ES ; 85 64
-CMP LS, HS ; 85 65
-CMP LS, $CD ; 85 66 CD
-
-CMP <HX>, DS ; 85 93
-CMP <HX>, ES ; 85 94
-CMP <HX>, $CD ; 85 99 CD
-CMP <HX>, LS ; 85 9A
-
-CMP <LX>, DS ; 85 A3
-CMP <LX>, ES ; 85 A4
-CMP <LX>, HS ; 85 A9
-CMP <LX>, $CD ; 85 AA CD
-
-CMP <HX:BX>, DS ; 85 D3
-CMP <HX:BX>, ES ; 85 D4
-CMP <HX:BX>, LS ; 85 DA
-CMP <HX:BX>, $CD ; 85 DD CD
-
-CMP <HX:LX>, DS ; 85 E3
-CMP <HX:LX>, ES ; 85 E4
-CMP <HX:LX>, HS ; 85 E9
-CMP <HX:LX>, $CD ; 85 EE CD
+	; 06
+		LRT LS, DS ; A4 63
+		LRT LS, ES ; A4 64
+		LRT LS, HS ; A4 65
+		LRT LS, $CD ; A4 66 CD
 
 
 
-JMP AS ; 86 00
-JMP BS ; 86 01
-JMP <$CDEFC0C1> ; 86 0F C1 C0 EF CD
-JMP <HX> ; 86 09
-JMP <LX> ; 86 0A
-JMP <HX:BX> ; 86 0D
-JMP <HX:LX> ; 86 0E
+; 11
+	; 00
+	; 03
+		RRT DS, $CD ; B4 33 CD
+		RRT DS, ES ; B4 34
+		RRT DS, HS ; B4 35
+		RRT DS, LS ; B4 36
 
-JPZ AS ; 86 10
-JPZ BS ; 86 11
-JPZ <$CDEFC0C1> ; 86 1F C1 C0 EF CD
-JPZ <HX> ; 86 19
-JPZ <LX> ; 86 1A
-JPZ <HX:BX> ; 86 1D
-JPZ <HX:LX> ; 86 1E
+	; 04
+		RRT ES, DS ; B4 43
+		RRT ES, $CD ; B4 44 CD
+		RRT ES, HS ; B4 45
+		RRT ES, LS ; B4 46
 
-JNZ AS ; 86 20
-JNZ BS ; 86 21
-JNZ <$CDEFC0C1> ; 86 2F C1 C0 EF CD
-JNZ <HX> ; 86 29
-JNZ <LX> ; 86 2A
-JNZ <HX:BX> ; 86 2D
-JNZ <HX:LX> ; 86 2E
+	; 05
+		RRT HS, DS ; B4 53
+		RRT HS, ES ; B4 54
+		RRT HS, $CD ; B4 55 CD
+		RRT HS, LS ; B4 56
 
-JPC AS ; 86 30
-JPC BS ; 86 31
-JPC <$CDEFC0C1> ; 86 3F C1 C0 EF CD
-JPC <HX> ; 86 39
-JPC <LX> ; 86 3A
-JPC <HX:BX> ; 86 3D
-JPC <HX:LX> ; 86 3E
-
-JNC AS ; 86 40
-JNC BS ; 86 41
-JNC <$CDEFC0C1> ; 86 4F C1 C0 EF CD
-JNC <HX> ; 86 49
-JNC <LX> ; 86 4A
-JNC <HX:BX> ; 86 4D
-JNC <HX:LX> ; 86 4E
+	; 06
+		RRT LS, DS ; B4 63
+		RRT LS, ES ; B4 64
+		RRT LS, HS ; B4 65
+		RRT LS, $CD ; B4 66 CD
 
 
 
-PSH AS ; 8A 00
-PSH BS ; 8A 01
-PSH CS ; 8A 02
-PSH DS ; 8A 03
-PSH ES ; 8A 04
-PSH HS ; 8A 05
-PSH LS ; 8A 06
+; 12
+	; 00
+		CMP AS, $CD ; 85 00 CD
+		CMP AS, BS ; 85 01
+		CMP AS, CS ; 85 02
+		CMP AS, DS ; 85 03
+		CMP AS, ES ; 85 04
+		CMP AS, HS ; 85 05
+		CMP AS, LS ; 85 06
 
-POP AS ; 8A 10
-POP BS ; 8A 11
-POP CS ; 8A 12
-POP DS ; 8A 13
-POP ES ; 8A 14
-POP HS ; 8A 15
-POP LS ; 8A 16
+	; 01
+		CMP BS, AS ; 85 10
+		CMP BS, $CD ; 85 11 CD
+		CMP BS, CS ; 85 12
+		CMP BS, DS ; 85 13
+		CMP BS, ES ; 85 14
+		CMP BS, HS ; 85 15
+		CMP BS, LS ; 85 16
+
+	; 02
+		CMP CS, AS ; 85 20
+		CMP CS, BS ; 85 21
+		CMP CS, $CD ; 85 22 CD
+		CMP CS, DS ; 85 23
+		CMP CS, ES ; 85 24
+		CMP CS, HS ; 85 25
+		CMP CS, LS ; 85 26
+
+	; 03
+		CMP DS, AS ; 85 30
+		CMP DS, BS ; 85 31
+		CMP DS, CS ; 85 32
+		CMP DS, $CD ; 85 33 CD
+		CMP DS, ES ; 85 34
+		CMP DS, HS ; 85 35
+		CMP DS, LS ; 85 36
+
+	; 04
+		CMP ES, AS ; 85 40
+		CMP ES, BS ; 85 41
+		CMP ES, CS ; 85 42
+		CMP ES, DS ; 85 43
+		CMP ES, $CD ; 85 44 CD
+		CMP ES, HS ; 85 45
+		CMP ES, LS ; 85 46
+
+	; 05
+		CMP HS, AS ; 85 50
+		CMP HS, BS ; 85 51
+		CMP HS, CS ; 85 52
+		CMP HS, DS ; 85 53
+		CMP HS, ES ; 85 54
+		CMP HS, $CD ; 85 55 CD
+		CMP HS, LS ; 85 56
+
+	; 06
+		CMP LS, AS ; 85 60
+		CMP LS, BS ; 85 61
+		CMP LS, CS ; 85 62
+		CMP LS, DS ; 85 63
+		CMP LS, ES ; 85 64
+		CMP LS, HS ; 85 65
+		CMP LS, $CD ; 85 66 CD
+
+	; 1A
+		CMP <HX>, DS ; 85 93
+		CMP <HX>, ES ; 85 94
+		CMP <HX>, $CD ; 85 99 CD
+		CMP <HX>, LS ; 85 9A
+
+	; 1B
+		CMP <LX>, DS ; 85 A3
+		CMP <LX>, ES ; 85 A4
+		CMP <LX>, HS ; 85 A9
+		CMP <LX>, $CD ; 85 AA CD
+
+	; 25
+		CMP <HX:BX>, DS ; 85 D3
+		CMP <HX:BX>, ES ; 85 D4
+		CMP <HX:BX>, LS ; 85 DA
+		CMP <HX:BX>, $CD ; 85 DD CD
+
+	; 26
+		CMP <HX:LX>, DS ; 85 E3
+		CMP <HX:LX>, ES ; 85 E4
+		CMP <HX:LX>, HS ; 85 E9
+		CMP <HX:LX>, $CD ; 85 EE CD
+
+	; 2D
+	; 2E
+
+
+
+		JMP AS ; 86 00
+		JMP BS ; 86 01
+		JMP <$CDEFC0C1> ; 86 0F C1 C0 EF CD
+		JMP <HX> ; 86 09
+		JMP <LX> ; 86 0A
+		JMP <HX:BX> ; 86 0D
+		JMP <HX:LX> ; 86 0E
+
+		JPZ AS ; 86 10
+		JPZ BS ; 86 11
+		JPZ <$CDEFC0C1> ; 86 1F C1 C0 EF CD
+		JPZ <HX> ; 86 19
+		JPZ <LX> ; 86 1A
+		JPZ <HX:BX> ; 86 1D
+		JPZ <HX:LX> ; 86 1E
+
+		JNZ AS ; 86 20
+		JNZ BS ; 86 21
+		JNZ <$CDEFC0C1> ; 86 2F C1 C0 EF CD
+		JNZ <HX> ; 86 29
+		JNZ <LX> ; 86 2A
+		JNZ <HX:BX> ; 86 2D
+		JNZ <HX:LX> ; 86 2E
+
+		JPC AS ; 86 30
+		JPC BS ; 86 31
+		JPC <$CDEFC0C1> ; 86 3F C1 C0 EF CD
+		JPC <HX> ; 86 39
+		JPC <LX> ; 86 3A
+		JPC <HX:BX> ; 86 3D
+		JPC <HX:LX> ; 86 3E
+
+		JNC AS ; 86 40
+		JNC BS ; 86 41
+		JNC <$CDEFC0C1> ; 86 4F C1 C0 EF CD
+		JNC <HX> ; 86 49
+		JNC <LX> ; 86 4A
+		JNC <HX:BX> ; 86 4D
+		JNC <HX:LX> ; 86 4E
+
+
+
+		PSH AS ; 8A 00
+		PSH BS ; 8A 01
+		PSH CS ; 8A 02
+		PSH DS ; 8A 03
+		PSH ES ; 8A 04
+		PSH HS ; 8A 05
+		PSH LS ; 8A 06
+
+		POP AS ; 8A 10
+		POP BS ; 8A 11
+		POP CS ; 8A 12
+		POP DS ; 8A 13
+		POP ES ; 8A 14
+		POP HS ; 8A 15
+		POP LS ; 8A 16
 
 ;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -1722,7 +1801,7 @@ NOT HX ; 63 05
 NOT LX ; 63 06
 
 
-; SFT/RTT系はローテートする回数を指定する
+; SFT/RTTはローテートする回数を指定する
 ; 16Bit SFT/RTTでは結果はmod 16した回数と同じになる
 LST DX, $CD ; 04 33 CD
 LST DX, ES ; 04 34
@@ -1996,8 +2075,14 @@ OUT $CDEF ; 0F 01 EF CD *
 
 ;;;;;; 32Bit Inst ;;;;;;
 
+IND $CDEFC0C1 ; C1 C0 EF CD
+OUTD $CDEFC0C1 ; C1 C0 EF CD
+
 ;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;;;; 64Bit Inst ;;;;;;
+
+INQ $CDEFC0C1C2C3C4C5 ; C5 C4 C3 C2 C1 C0 EF CD
+OUTQ $CDEFC0C1C2C3C4C5 ; C5 C4 C3 C2 C1 C0 EF CD
 
 ;;;;;;;;;;;;;;;;;;;;;;;;
