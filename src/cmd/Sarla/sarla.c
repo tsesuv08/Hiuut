@@ -10,31 +10,23 @@ typedef unsigned int uint;
 typedef enum
 {	tk_null,
 	tk_void,
+	tk_newl,
 	tk_int,
 	tk_flt,
 	tk_str,
-	tk_eof;
+	tk_eof
 } ttp;
 
 typedef struct
-{	typedef union
-	{	;
-	};
-
+{	ttp type;
 	chr *s;
 	uint l;
 } tkn;
 
-chr f = 0;
+chr spTkn(tkn *dis, chr *str)
+{	return 0;
+}
 
 int main(int ac, chr **av)
-{	if(ac < 2)
-		f |= 0x1;
-
-	for(int i = 0; i < ac; i++)
-	{	if(*av[i] == '/')
-			printf("option\n");
-	}
-
-	return 0;
+{	return 0;
 }
