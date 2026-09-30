@@ -2,6 +2,7 @@
 #define LART_H
 
 #include <stdio.h>
+#include <stdlib.h>
 
 typedef unsigned char chr;
 typedef unsigned int uint;
@@ -79,6 +80,31 @@ chr sget(chr *out)
 		} else
 			*out++ = c;
 	}
+}
+
+uint fsyz(FILE *fp)
+{	uint t = 0;
+
+	fseek(fp, 0, SEEK_END);
+	t = ftell(fp);
+	fseek(fp, 0, SEEK_SET);
+	t -= ftell(fp);
+
+	return t;
+}
+
+chr bufa(chr **buf, uint *syz, chr c)
+{	if(*syz <= 1 + slen(*buf))
+	{	*syz = 2 * (1 + *syz);
+		chr *t = realloc(*buf, *syz);
+		if(!t)
+			return 1;
+
+		*buf = t;
+	} (*buf)[1 + slen(*buf)] = 0;
+	(*buf)[slen(*buf)] = c;
+
+	return 0;
 }
 
 #endif /* lart.h */
