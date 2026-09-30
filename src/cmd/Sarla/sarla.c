@@ -23,6 +23,17 @@ typedef struct
 	uint l;
 } tkn;
 
+uint fsyz(FILE *file)
+{	uint t = 0;
+
+	fseek(file, 0, SEEK_END);
+	t = ftell(file);
+	fseek(file, 0, SEEK_SET);
+	t -= ftell(file);
+
+	return t;
+}
+
 chr spTkn(tkn *dis, chr *str)
 {	return 0;
 }
