@@ -11,17 +11,13 @@ int main(int ac, chr **av)
 {	if(ac < 2)
 		return 1;
 
-	if(2 < ac)
-	{	if(scmpa(av[1], "/N", 3) == 3)
-			flg |= 2;
-	}
-
 	chr *fname = malloc(1);
 	for(uint k = 0; k < ac; k++)
-	{	if(scmpa(av[k], "/F:", 3) == 3)
-		{	flg |= 1;
+	{	if(scmpa(av[k], "/N", 3) == 3)
+			flg |= 2;
 
-			fname = realloc(fname, slen(av[k] - 3));
+		else if(scmpa(av[k], "/F:", 3) == 3)
+		{	fname = realloc(fname, slen(av[k] - 3));
 
 			for(uint i = 3; i < slen(av[k]); i++)
 				fname[i - 3] = av[k][i];
@@ -30,13 +26,11 @@ int main(int ac, chr **av)
 
 			fp = fopen(fname, "r+");
 			if(!fp)
-			{	flg |= 2;
-
-				fp = fopen(fname, "w");
+			{	fp = fopen(fname, "w");
 				if(fp)
+				{	flg |= 2;
 					printf("New file\n");
-
-				else
+				} else
 				{	printf("File not exist\n");
 
 					return 2;
