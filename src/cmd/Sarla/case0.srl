@@ -1,0 +1,7 @@
+[	[	>public main()|int
+	] :=: funx
+
+	public main()|int
+	[	ret(0)
+	]
+] :=: case0|mdl

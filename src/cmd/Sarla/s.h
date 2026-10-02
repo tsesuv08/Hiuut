@@ -96,4 +96,27 @@ chr sgetc(chr *out, uint cnt)
 	} return 1;
 }
 
+uint fsyz(FILE *file)
+{	uint t = 0;
+
+	fseek(file, 0, SEEK_END);
+	t = ftell(file);
+	fseek(file, 0, SEEK_SET);
+	t -= ftell(file);
+
+	return t;
+}
+chr mcpy(chr *d, chr *s)
+{	while(*d++ = *s++);
+
+	return 0;
+}
+
+chr mncpy(chr *d, chr *s, uint n)
+{	while(n--)
+		*d++ = *s++;
+
+	return 0;
+}
+
 #endif /* s.h */
