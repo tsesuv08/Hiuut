@@ -1,5 +1,5 @@
 /* Unsynk Chain Compiler */
-/* Version: M1N0P0P */
+/* Version: M0N0P0P */
 /* Created by UnSynk, TSesuv Xanuc Notsel */
 
 #define DEFAULT_SRC_FILE_NAME "MAIN.SRL"
