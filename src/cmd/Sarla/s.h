@@ -96,6 +96,13 @@ chr sgetc(chr *out, uint cnt)
 	} return 1;
 }
 
+chr ccha(chr c)
+{	if(0x1F < c && c < 0x7F)
+		return 1;
+
+	return 0;
+}
+
 uint fsyz(FILE *file)
 {	uint t = 0;
 

@@ -3,7 +3,7 @@
 /* Created by UnSynk, TSesuv Xanuc Notsel */
 
 #define DEFAULT_SRC_FILE_NAME "MAIN.SRL"
-#define DEFAULT_TKN_FILE_NAME "A.TKN"
+#define DEFAULT_TKN_FILE_NAME "MAIN.TKN"
 
 #include "s.h"
 #include <stdlib.h>
@@ -54,7 +54,11 @@ int main(int ac, chr **av)
 	for(uint i = 0; i < sfsyze; i++)
 	{	chr c = fgetc(sfile);
 
-		printf("%c", c);
+		if(ccha(c))
+			putchar(c);
+
+		else
+			putchar('.');
 	}
 
 	fclose(sfile);
